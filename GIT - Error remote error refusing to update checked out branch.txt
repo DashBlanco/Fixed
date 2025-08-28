@@ -1,0 +1,18 @@
+# Error:
+
+Resolviendo deltas: 100% (231/231), completado con 3 objetos locales.
+
+Error: refusing to update checked out branch: refs/heads/master
+
+Por defecto, actualizar la rama actual en un repositorio no vacío está denegado, porque eso haría el índice y el árbol de trabajo inconsistentes con lo que ya se ha empujado, y requeriría 'git reset --hard' para arreglar el árbol de trabajo con HEAD.
+Puedes configurar la variable de configuración 'receive.denyCurrentBranch' en "ignore" o "warn" en el repositorio remoto para permitir su rama actual. Sin embargo, esto no se recomienda a menos que tú te hayas organizado para actualizar su árbol de trabajo para que coincida con lo que enviarás con el empuje de otra manera.
+Para suprimir este mensaje y mantener el comportamiento predeterminado, configura 'receive.denyCurrentBranch' a 'refuse'.
+
+To ssh://192.168.0.35:8000/repos/ProjectLife/.git
+! [remote rejected]   master -> master (branch is currently checked out)
+error: failed to push some refs to 'ssh://192.168.0.35:8000/ProjectLife/.git'
+
+# Solucion:
+=============================================================================================
+
+git config --global receive.denyCurrentBranch updateInstead
